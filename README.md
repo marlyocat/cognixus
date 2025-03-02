@@ -26,6 +26,10 @@ Update the AWS credentials
 
     1. Run the command "aws configure" and follow the prompts to enter your AWS credentials
 
+Login to Docker
+
+    1. Run the command "docker login" and follow the prompts to enter your Docker credentials
+
 ## Execution
 
 ### Task 1 - Gitea Application (Terraform)
