@@ -22,6 +22,10 @@ Git Clone the repository
 
     1. Run the command "git clone https://github.com/marlyocat/cognixus.git"
 
+Update the AWS credentials
+
+    1. Run the command "aws configure" and follow the prompts to enter your AWS credentials
+
 ## Execution
 
 ### Task 1 - Gitea Application (Terraform)
