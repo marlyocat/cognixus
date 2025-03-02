@@ -1,0 +1,15 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "- Install Docker(https://docs.docker.com/get-docker/)\r - Clone this repository:\r   ```sh\r   git clone https://github.com/your-repo/my-node-app.git\r   cd my-node-app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ip": "^2.0.1"
+  }
+}

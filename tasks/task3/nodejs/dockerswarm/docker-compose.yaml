@@ -1,0 +1,23 @@
+services:
+  app:
+    image: ahoymatey/nodejs:latest
+    working_dir: /app
+    command: node app.js
+    deploy:
+      replicas: 3
+    expose:
+      - "3000"
+
+  nginx:
+    image: nginx:latest
+    depends_on:
+      - app
+    ports:
+      - "3000:80"
+    configs:
+      - source: nginx_config
+        target: /etc/nginx/nginx.conf
+
+configs:
+  nginx_config:
+    file: ./nginx.conf
