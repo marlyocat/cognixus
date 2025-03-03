@@ -11,3 +11,6 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 
 # Install K3s
 curl -sfL https://get.k3s.io | sh -
+
+# Install Python 3.10 and dependencies
+apt install -y python3.10 python3.10-venv python3.10-dev python3-pip

@@ -11,6 +11,7 @@ resource "aws_instance" "gitea_app" {
 
   tags = {
     Name = "gitea-app-${count.index + 1}"
+    Application = "gitea"
   }
 
   provisioner "local-exec" {

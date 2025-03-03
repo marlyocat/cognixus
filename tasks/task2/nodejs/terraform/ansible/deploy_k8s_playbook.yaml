@@ -1,0 +1,36 @@
+- name: Deploy Nodejs Kubernetes manifests
+  hosts: aws_ec2
+  become: true
+  tasks:
+    - name: Install kubernetes Python package
+      pip:
+        name: kubernetes
+        executable: /usr/bin/pip3.10
+
+    - name: Create nodejs namespace
+      kubernetes.core.k8s:
+        state: present
+        kubeconfig: /etc/rancher/k3s/k3s.yaml
+        kind: Namespace
+        name: nodejs
+
+    - name: Apply Nodejs Kubernetes deployment manifests
+      kubernetes.core.k8s:
+        state: present
+        kubeconfig: /etc/rancher/k3s/k3s.yaml
+        src: /home/ubuntu/deployment.yaml
+        namespace: nodejs
+
+    - name: Apply Nodejs Kubernetes service manifests
+      kubernetes.core.k8s:
+        state: present
+        kubeconfig: /etc/rancher/k3s/k3s.yaml
+        src: /home/ubuntu/service.yaml
+        namespace: nodejs
+
+    - name: Apply Nodejs Kubernetes ingress manifests
+      kubernetes.core.k8s:
+        state: present
+        kubeconfig: /etc/rancher/k3s/k3s.yaml
+        src: /home/ubuntu/ingress.yaml
+        namespace: nodejs

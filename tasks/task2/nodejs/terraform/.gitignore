@@ -5,3 +5,9 @@
 # Ignore .terraform directory and lock file
 .terraform/
 .terraform.lock.hcl
+
+# Ignore ansible virtual environment
+.venv/
+
+# Ignore nodejs private ssh key
+./ansible/*.pem

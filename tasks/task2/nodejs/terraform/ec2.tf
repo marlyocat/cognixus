@@ -14,6 +14,7 @@ resource "aws_instance" "nodejs_app" {
 
   tags = {
     Name = "nodejs-app-${count.index + 1}"
+    Application = "nodejs"
   }
 
   provisioner "file" {
@@ -65,4 +66,10 @@ resource "tls_private_key" "nodejs_ssh_key" {
 resource "aws_key_pair" "nodejs_deployer_key" {
   key_name   = "nodejs-deployer-key"
   public_key = tls_private_key.nodejs_ssh_key.public_key_openssh
+}
+
+resource "local_file" "nodejs_ssh_private_key" {
+  filename = "./ansible/nodejs_ssh_key.pem"
+  content  = tls_private_key.nodejs_ssh_key.private_key_pem
+  file_permission = "0600"
 }

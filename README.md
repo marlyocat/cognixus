@@ -16,7 +16,7 @@ Take Home Test
 
 * Docker (https://docs.docker.com/get-docker/)
 
-## Setup
+## Steps to setup the tasks
 
 Git Clone the repository
 
@@ -57,14 +57,13 @@ Login to Docker
 
     3. Run the command "terraform apply"
 
-    4. Run the command "terraform output nodejs_public_ips" to get the public ip of the nodejs application
+    4. Run the command "terraform output nodejs_public_ips" to get the public ip of the nodejs ecs instance
 
-    5. Access the ec2 instance and run the commands below
-        - "sudo k3s kubectl create ns nodejs"
-        - "sudo k3s kubectl apply -f deployment.yaml -n nodejs"
-        - "sudo k3s kubectl apply -f service.yaml -n nodejs"
+    5. Navigate to the directory "cd tasks/task2/nodejs/terraform/ansible"
 
-    6. Access the url "http://<nodejs_public_ip>:30100" in your web browser to see the nodejs application
+    6. Run the script "./run_ansible_playbook.sh" to deploy the nodejs application
+
+    7. Access the url "http://<nodejs_public_ip>:30100" in your web browser to see the nodejs application
 
 #### Teardown
 
@@ -98,6 +97,23 @@ Login to Docker
 
     3. Run "docker stack deploy -c docker-compose.yaml my-docker-stack" to start the swarm
 
+    4. Access the url "localhost:3000" in your web browser to see the nodejs application
+
 #### Teardown
 
     1. Run the command "docker stack rm my-docker-stack" to remove the stack
+
+## Accessing my Application
+
+### Task 1 - Gitea Application
+
+1. Access the url "chipichapa.site" in your web browser to see the gitea application
+
+### Task 2 - Nodejs Application
+
+1. Access the url "http://<nodejs_public_ip>:30100" in your web browser to see the nodejs application
+
+### Task 3 - Nodejs Application (Docker and Docker Swarm)
+
+1. Run "docker stack deploy -c docker-compose.yaml my-docker-stack" to view locally
+2. Access the url "localhost:3000" in your web browser to see the nodejs application
