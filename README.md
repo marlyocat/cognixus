@@ -137,7 +137,7 @@ Login to Docker
 
 ### Gitea Application (Task 1)
 
-1. Access the url "chipichapa.site" in your web browser to see the gitea application
+1. Access the url "https://chipichapa.site" in your web browser to see the gitea application
 
 ### Nodejs Application (Task 2)
 
