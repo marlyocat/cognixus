@@ -95,16 +95,18 @@ resource "aws_security_group" "nodejs_security_group" {
 }
 
 // Security Group Rules
-resource "aws_security_group_rule" "nodejs_ingress_all" {
+resource "aws_security_group_rule" "nodejs_ingress" {
+  for_each = toset(["80", "443", "30100", "22"])
+
   type              = "ingress"
-  from_port         = 0
-  to_port           = 65535
-  protocol          = "-1"
+  from_port         = tonumber(each.value)
+  to_port           = tonumber(each.value)
+  protocol          = "tcp"
   cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = aws_security_group.nodejs_security_group.id
 }
 
-resource "aws_security_group_rule" "nodejs_egress_all" {
+resource "aws_security_group_rule" "nodejs_egress" {
   type              = "egress"
   from_port         = 0
   to_port           = 65535

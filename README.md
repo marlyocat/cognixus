@@ -1,3 +1,31 @@
+# Table of Contents
+1. [Project](#project)
+    - [Description](#description)
+    - [Getting Started](#getting-started)
+        - [Dependencies and Tools](#dependencies-and-tools)
+        - [Steps to Setup the Tasks](#steps-to-setup-the-tasks)
+
+2. [Task 1 - Gitea Application (Terraform)](#task-1---gitea-application-terraform)
+    - [Initialization](#initialization)
+    - [Teardown](#teardown)
+
+3. [Task 2 - Nodejs Application (Terraform)](#task-2---nodejs-application-terraform)
+    - [Initialization](#initialization-1)
+    - [Teardown](#teardown-1)
+
+4. [Task 3 - Nodejs Application (Docker and Docker Swarm)](#task-3---nodejs-application-docker-and-docker-swarm)
+    - [Docker](#docker)
+        - [Initialization](#initialization-2)
+        - [Teardown](#teardown-2)
+    - [Docker Swarm](#docker-swarm)
+        - [Initialization](#initialization-3)
+        - [Teardown](#teardown-3)
+
+4. [Accessing my Running Application](#accessing-my-running-application)
+    - [Gitea Application (Task 1)](#gitea-application-task-1)
+    - [Nodejs Application (Task 2)](#nodejs-application-task-2)
+    - [Nodejs Application using Docker and Docker Swarm (Task 3)](#nodejs-application-using-docker-and-docker-swarm-task-3)
+
 # Project
 
 Cognixus
@@ -105,17 +133,17 @@ Login to Docker
 
     1. Run the command "docker stack rm my-docker-stack" to remove the stack
 
-## Accessing my Application
+## Accessing my Running Application
 
-### Task 1 - Gitea Application
+### Gitea Application (Task 1)
 
 1. Access the url "chipichapa.site" in your web browser to see the gitea application
 
-### Task 2 - Nodejs Application
+### Nodejs Application (Task 2)
 
-1. Access the url "http://<nodejs_public_ip>:30100" in your web browser to see the nodejs application
+1. Access the url "http://3.1.220.128:30100/" in your web browser to see the nodejs application
 
-### Task 3 - Nodejs Application (Docker and Docker Swarm)
+### Nodejs Application using Docker and Docker Swarm (Task 3)
 
 1. Run "docker stack deploy -c docker-compose.yaml my-docker-stack" to view locally
 2. Access the url "localhost:3000" in your web browser to see the nodejs application

@@ -15,7 +15,6 @@ echo "Display Ansible inventory graph"
 ansible-inventory -i aws_ec2.yaml --graph
 
 echo "Run the Ansible playbook to deploy Kubernetes"
-ansible-playbook -i aws_ec2.yaml -u ubuntu --private-key nodejs_ssh_key.pem \
-  --extra-vars "ansible_ssh_extra_args='-o StrictHostKeyChecking=no'" deploy_k8s_playbook.yaml
+ansible-playbook -i aws_ec2.yaml -u ubuntu --private-key nodejs_ssh_key.pem --extra-vars "ansible_ssh_extra_args='-o StrictHostKeyChecking=no'" deploy_k8s_playbook.yaml
 
 echo "Script Execution Completed"
