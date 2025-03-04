@@ -16,6 +16,8 @@ Take Home Test
 
 * Docker (https://docs.docker.com/get-docker/)
 
+* Python3 (https://www.python.org/downloads/)
+
 ## Steps to setup the tasks
 
 Git Clone the repository

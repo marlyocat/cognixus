@@ -1,13 +1,13 @@
 # Terraform State Files
-*.tfstate
-*.tfstate.backup
+**/*.tfstate
+**/*.tfstate.backup
 
 # Ignore .terraform directory and lock file
-.terraform/
-.terraform.lock.hcl
+**/.terraform/
+**/.terraform.lock.hcl
 
 # Ignore ansible virtual environment
-.venv/
+**/.venv/
 
 # Ignore nodejs private ssh key
-./ansible/*.pem
+**/ansible/*.pem
