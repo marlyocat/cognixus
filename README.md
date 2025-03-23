@@ -141,7 +141,7 @@ Login to Docker
 
 ### Nodejs Application (Task 2)
 
-1. Access the url "http://3.1.220.128:30100/" in your web browser to see the nodejs application
+1. Access the url "http://13.213.56.212:30100/" in your web browser to see the nodejs application
 
 ### Nodejs Application using Docker and Docker Swarm (Task 3)
 
