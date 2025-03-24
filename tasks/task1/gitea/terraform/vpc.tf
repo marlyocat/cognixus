@@ -96,7 +96,7 @@ resource "aws_security_group" "gitea_security_group" {
 
 // Security Group Rules
 resource "aws_security_group_rule" "gitea_ingress" {
-  for_each = toset(["80", "443"])
+  for_each = toset(["80", "443", "22"])
 
   type              = "ingress"
   from_port         = tonumber(each.value)
